@@ -7,8 +7,7 @@ export default function Contact() {
             <p className="text-sm uppercase tracking-[0.25em] text-[#76e4c3]">Contact</p>
             <h3 className="font-heading text-3xl mt-2">Let’s build Prime together</h3>
             <p className="mt-3 text-white/70">
-              Tell us about your product, timeline, and goals. We typically respond within 24 hours with next steps and
-              an initial approach.
+              Tell me about your product, timeline, and goals. I typically respond within 24 hours with next steps and an initial approach.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/80">
               <a href="mailto:primesitedigital@gmail.com" className="pill">
@@ -46,6 +45,12 @@ export default function Contact() {
             <button type="submit" className="btn btn-primary w-full justify-center">
               Send message
             </button>
+            <a
+              href="mailto:primesitedigital@gmail.com"
+              className="btn btn-secondary w-full justify-center text-center"
+            >
+              Email me directly
+            </a>
           </form>
         </div>
       </div>
