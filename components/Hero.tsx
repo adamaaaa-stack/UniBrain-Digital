@@ -10,23 +10,20 @@ export default function Hero() {
           </span>
           <div className="space-y-4">
             <h2 className="font-heading text-4xl leading-tight md:text-5xl">
-              Premium web & AI experiences crafted for founders who move fast.
+              Premium websites, front to back, built for founders who move fast.
             </h2>
             <p className="text-lg text-white/70 leading-relaxed max-w-2xl">
-              We design and build cinematic, high-performing sites, AI tools, and automations that keep your product
-              ahead. Every pixel purposeful, every flow performance-ready.
+              I design and build cinematic, high-performing web experiences—end to end. From frontend polish to backend
+              reliability, every page is tuned for speed, clarity, and conversion.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
             <Link href="#contact" className="btn btn-primary">
               Start a project
             </Link>
-            <Link href="#projects" className="btn btn-secondary">
-              View work
-            </Link>
           </div>
           <div className="flex flex-wrap gap-3 text-sm text-white/70">
-            {["Next.js", "TypeScript", "Tailwind", "Node", "OpenAI", "Postgres"].map((tag) => (
+            {["Next.js", "TypeScript", "Tailwind", "Node", "Postgres"].map((tag) => (
               <span key={tag} className="pill">
                 {tag}
               </span>
@@ -42,7 +39,8 @@ export default function Hero() {
                   <p className="text-sm text-white/60">Active Build</p>
                   <h3 className="font-heading text-2xl">Launch-grade storytelling</h3>
                   <p className="text-white/70 mt-2">
-                    Landing systems with live CMS, A/B ready sections, and motion-first components.
+                    Landing systems with live CMS, A/B ready sections, and motion-first components—built as full-stack
+                    sites with production-ready backends.
                   </p>
                 </div>
                 <span className="text-[#76e4c3] text-sm">● Live</span>
