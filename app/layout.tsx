@@ -28,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="google-site-verification" content="6offM69pD82oFOX5xZB2fp8Mb9TZuU9v-1-_5wwJbqU" />
+        <meta name="google-site-verification" content="LzDcr_WxyD_ptFQGuS9aS4Yl0zoC_WnwVEKEGQczTPE" />
       </head>
       <body className={`${heading.variable} ${body.variable} antialiased`}>
         {children}
