@@ -86,13 +86,9 @@ export default function Projects() {
                   </div>
                 </div>
               )}
-              <div className="flex flex-wrap gap-3 text-sm">
-                <a href={selected.live} className="btn btn-primary" target="_blank" rel="noreferrer">
-                  View mock site
-                </a>
-                <a href={selected.code} className="btn btn-secondary" target="_blank" rel="noreferrer">
-                  View repo
-                </a>
+              <div className="rounded-2xl border border-white/10 bg-gradient-to-r from-[#76e4c3]/20 to-[#5bb2ff]/10 p-4 text-sm text-white/80">
+                This is a concept preview shown in-line—no separate site to load. Want a live walkthrough? Let’s hop on
+                a quick call and I’ll demo interactions.
               </div>
             </div>
           </div>
