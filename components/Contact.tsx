@@ -8,6 +8,7 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [error, setError] = useState("");
+  const to = "unibraindigital@gmail.com";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -44,9 +45,7 @@ export default function Contact() {
               initial approach.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/80">
-              <a href="mailto:unibraindigital@gmail.com" className="pill">
-                unibraindigital@gmail.com
-              </a>
+              <span className="pill">{to}</span>
               <a href="https://github.com/" className="pill">
                 GitHub
               </a>
@@ -90,9 +89,6 @@ export default function Contact() {
             </button>
             {status === "success" && <p className="text-sm text-emerald-300">Message sent. I’ll reply shortly.</p>}
             {status === "error" && <p className="text-sm text-red-300">{error}</p>}
-            <a href="mailto:unibraindigital@gmail.com" className="btn btn-secondary w-full justify-center text-center">
-              Email me directly
-            </a>
           </form>
         </div>
       </div>
