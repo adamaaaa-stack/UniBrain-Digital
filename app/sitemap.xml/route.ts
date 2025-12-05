@@ -2,8 +2,12 @@ import { NextResponse } from "next/server";
 
 const routes = ["/"];
 
-export async function GET() {
-  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://primesitedigital.vercel.app";
+export async function GET(request: Request) {
+  const host = request.headers.get("host");
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+    (host ? `https://${host}` : "https://primesitedigital.vercel.app");
+
   const urls = routes
     .map(
       (path) => `
