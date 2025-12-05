@@ -15,8 +15,8 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Study AI — Your study copilot",
-  description: "Study AI helps you learn faster with summaries, flashcards, and quizzes powered by an on-page AI tutor.",
+  title: "UniBrain Digital — Portfolio",
+  description: "Portfolio of UniBrain Digital: modern product sites with embedded AI chatbots.",
 };
 
 export default function RootLayout({

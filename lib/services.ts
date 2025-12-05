@@ -1,17 +1,17 @@
 export const services = [
   {
-    title: "Smart Summaries",
-    desc: "Condense lectures and notes into concise takeaways with citations back to your source.",
-    icon: "📄",
+    title: "Product Websites",
+    desc: "Conversion-led product sites with motion, A/B-ready sections, and clean CMS authoring.",
+    icon: "PW",
   },
   {
-    title: "Flashcards & Quizzes",
-    desc: "Auto-generate cards and adaptive quizzes that drill weak spots and track progress.",
-    icon: "🧠",
+    title: "AI Chatbots",
+    desc: "On-brand chatbots embedded in your site for support, FAQs, and lead capture.",
+    icon: "AI",
   },
   {
-    title: "Embedded Study Chatbot",
-    desc: "Ask questions in context—an on-page AI tutor that references your material, not the open web.",
-    icon: "🤖",
+    title: "Full-Stack Delivery",
+    desc: "Backend + frontend buildout so your site, chatbot, and forms are production-ready.",
+    icon: "FS",
   },
 ];

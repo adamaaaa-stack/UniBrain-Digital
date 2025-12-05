@@ -39,7 +39,7 @@ export default function Contact() {
         <div className="grid gap-8 md:grid-cols-[1fr_1.1fr] items-start">
           <div>
             <p className="text-sm uppercase tracking-[0.25em] text-[#76e4c3]">Contact</p>
-            <h3 className="font-heading text-3xl mt-2">Let's study smarter with Study AI</h3>
+            <h3 className="font-heading text-3xl mt-2">Let’s build with UniBrain</h3>
             <p className="mt-3 text-white/70">
               Tell me about your product, timeline, and goals. I typically respond within 24 hours with next steps and an
               initial approach.
@@ -87,7 +87,7 @@ export default function Contact() {
             >
               {status === "loading" ? "Sending..." : "Send message"}
             </button>
-            {status === "success" && <p className="text-sm text-emerald-300">Message sent. I'll reply shortly.</p>}
+            {status === "success" && <p className="text-sm text-emerald-300">Message sent. I’ll reply shortly.</p>}
             {status === "error" && <p className="text-sm text-red-300">{error}</p>}
           </form>
         </div>
