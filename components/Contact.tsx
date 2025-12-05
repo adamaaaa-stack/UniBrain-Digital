@@ -19,9 +19,6 @@ export default function Contact() {
               <a href="https://instagram.com/" className="pill">
                 Instagram
               </a>
-              <a href="https://www.linkedin.com/" className="pill">
-                LinkedIn
-              </a>
             </div>
           </div>
           <form className="space-y-4">
