@@ -6,13 +6,30 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const to = "unibraindigital@gmail.com";
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`New inquiry from ${name || "UniBrain visitor"}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    setStatus("loading");
+    setError("");
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (res.ok) {
+      setStatus("success");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      const data = await res.json().catch(() => ({}));
+      setError(data?.error || "Failed to send. Please try again.");
+      setStatus("error");
+    }
   };
 
   return (
@@ -27,8 +44,8 @@ export default function Contact() {
               initial approach.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/80">
-              <a href={`mailto:${to}`} className="pill">
-                {to}
+              <a href="mailto:unibraindigital@gmail.com" className="pill">
+                unibraindigital@gmail.com
               </a>
               <a href="https://github.com/" className="pill">
                 GitHub
@@ -53,6 +70,7 @@ export default function Contact() {
               className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <textarea
               name="message"
@@ -61,11 +79,18 @@ export default function Contact() {
               className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
+              required
             />
-            <button type="submit" className="btn btn-primary w-full justify-center">
-              Send message
+            <button
+              type="submit"
+              className="btn btn-primary w-full justify-center disabled:opacity-60"
+              disabled={status === "loading"}
+            >
+              {status === "loading" ? "Sending..." : "Send message"}
             </button>
-            <a href={`mailto:${to}`} className="btn btn-secondary w-full justify-center text-center">
+            {status === "success" && <p className="text-sm text-emerald-300">Message sent. I’ll reply shortly.</p>}
+            {status === "error" && <p className="text-sm text-red-300">{error}</p>}
+            <a href="mailto:unibraindigital@gmail.com" className="btn btn-secondary w-full justify-center text-center">
               Email me directly
             </a>
           </form>
