@@ -6,10 +6,10 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const to = "unibraindigital@gmail.com";
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const to = "unibraindigital@gmail.com";
     const subject = encodeURIComponent(`New inquiry from ${name || "UniBrain visitor"}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
     window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
@@ -27,8 +27,8 @@ export default function Contact() {
               initial approach.
             </p>
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-white/80">
-              <a href="mailto:unibraindigital@gmail.com" className="pill">
-                unibraindigital@gmail.com
+              <a href={`mailto:${to}`} className="pill">
+                {to}
               </a>
               <a href="https://github.com/" className="pill">
                 GitHub
@@ -65,7 +65,7 @@ export default function Contact() {
             <button type="submit" className="btn btn-primary w-full justify-center">
               Send message
             </button>
-            <a href="mailto:unibraindigital@gmail.com" className="btn btn-secondary w-full justify-center text-center">
+            <a href={`mailto:${to}`} className="btn btn-secondary w-full justify-center text-center">
               Email me directly
             </a>
           </form>
