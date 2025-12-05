@@ -7,8 +7,8 @@ const WORK = [
     href: "https://worthlyy.com/",
   },
   {
-    title: "UniBrain Portfolio",
-    desc: "Live UniBrain Digital build showcasing embedded AI chatbot positioning.",
+    title: "AI studying app",
+    desc: "Live UniBrain build showcasing an embedded AI chatbot for study flows.",
     href: "https://unibrain-jnxt-git-main-adamaaaa-stacks-projects.vercel.app/",
   },
 ];
